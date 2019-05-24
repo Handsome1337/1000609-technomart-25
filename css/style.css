@@ -1,0 +1,451 @@
+/* Не забыть проверить, всё ли нужное я записал в это правило
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+*/
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #ffffff;
+
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.button {
+  color: #ffffff;
+
+  background-color: #ee3643;
+}
+
+.site-header {
+  background-color: #f4f7f9;
+}
+
+.header-top,
+.header-top input,
+.footer-bottom {
+  background-color: #293449;
+}
+
+.site-logo,
+.footer-logo {
+  background-color: #ee3643;
+  box-shadow: 0px -5px 0px 0px rgba(0, 0, 0, 0.24) inset;
+}
+
+.button:hover,
+.site-logo:hover,
+.footer-logo:hover {
+  background-color: #ca2c37;
+}
+
+.button:active,
+.site-logo:active,
+.footer-logo:active {
+  background-color: #ba2732;
+}
+
+/*
+  СТИЛИЗУЕМ ИНПУТ
+*/
+
+.user-searching input {
+  color: #ffffff;
+
+  border: 0;
+}
+
+.user-searching input::-webkit-input-placeholder {
+  color: #ffffff;
+}
+.user-searching input::-moz-placeholder {
+  color: #ffffff;
+}
+.user-searching input:-moz-placeholder {
+  color: #ffffff;
+}
+.user-searching input:-ms-input-placeholder {
+  color: #ffffff;
+}
+
+
+.user-searching input:focus::-webkit-input-placeholder {
+  color: #000000;
+}
+.user-searching input:focus::-moz-placeholder {
+  color: #000000;
+}
+.user-searching input:focus:-moz-placeholder {
+  color: #000000;
+}
+.user-searching input:focus:-ms-input-placeholder {
+  color: #000000;
+}
+
+.user-searching input:focus,
+.user-searching input:active {
+  color: #000000;
+
+  background-color: #ffffff;
+}
+
+/*
+  СТИЛИЗАЦИЯ ИНПУТА ЗАКОНЧЕНА
+*/
+
+.header-top input,
+.header-top a {
+  line-height: 18px;
+}
+
+.header-top a:last-of-type {
+  background-color: #63a63e;
+}
+
+.header-top a:last-of-type:active {
+  opacity: 0.5;
+}
+
+.header-top a:nth-of-type(2):active,
+.header-top a:nth-of-type(3):active {
+  opacity: 0.6;
+}
+
+.header-bottom h1 {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 23px;
+  color: #ee3643;
+}
+
+.header-contacts .telephone-number {
+  color: #ee3643;
+
+  border: 3px solid #ffffff;
+}
+
+.header-contacts span {
+  font-size: 14px;
+  color: #32425c;
+}
+
+.header-login a {
+  font-size: 21px;
+  line-height: 21px;
+  color: #000000;
+
+  background-color: #ffffff;
+}
+
+.header-login a:hover {
+  color: #ee3643;
+
+  background-color: #ffffff;
+}
+
+
+.login-button:active span {
+  color: #000000;
+
+  opacity: 0.3;
+}
+
+.main-navigation {
+  background-color: #32425c;
+  box-shadow: 0px -5px 0px 0px rgba(41, 52, 73, 1) inset; 
+}
+
+.site-navigation {
+  list-style: none;
+}
+
+.site-navigation a {
+  line-height: 17px;
+}
+
+.site-navigation a:hover {
+  background-color: #293449;
+}
+
+.site-navigation a:active {
+  background-color: #1d2739;
+  opacity: 0.5;
+}
+
+main .button {
+  text-transform: uppercase;
+}
+
+.info {
+  color: #000000;
+}
+
+.info h3 {
+  font-size: 30px;
+  line-height: 30px;
+}
+
+.info p {
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 13px;
+}
+
+.about-us .our-partners {
+  font-size: 18px;
+  line-height: 20px;
+
+  list-style: none;
+}
+
+.contacts a:first-of-type {
+  background-color: #f4f2ed;
+}
+
+.site-footer {
+  background-color: #32425c;
+}
+
+.footer-top {
+  font-size: 18px;
+}
+
+.footer-navigation,
+.footer-navigation-products {
+  list-style: none;
+}
+
+.footer-navigation-products a,
+.feedback a,
+.creators a {
+  color: #ffd180;
+}
+
+.feedback a:active,
+.creators a:active {
+  color: #ee3643;
+}
+
+.footer-navigation a:hover,
+.footer-navigation-products a:hover,
+.feedback a:hover,
+.creators a:hover {
+  text-decoration: underline;
+}
+
+.footer-navigation a:active,
+.footer-navigation-products a:active {
+  opacity: 0.5;
+}
+
+.footer-bottom {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.social ul {
+  list-style: none;
+}
+
+.social a {
+  background-color: #212a3a;
+}
+
+.social-button:hover,
+.social-button:active {
+  background-color: #ee3643;
+}
+
+.modal {
+  display: none;
+}
+
+/*****Стилизация шапки каталога*****/
+
+.inner-page a:nth-of-type(3) {
+  background-color: #ee3643;
+}
+
+.user-profile .login-button {
+  font-size: 21px;
+  line-height: 21px;
+  color: #000000;
+
+  background-color: #ffffff;
+}
+
+.user-profile .login-button:hover,
+.user-profile .login-button:focus,
+.user-profile .login-button:active {
+  background-color: #ffffff
+}
+
+.user-options a {
+  font-size: 16px;
+  line-height: 18px;
+  color: #32425c;
+  text-decoration: underline;
+}
+
+.user-options a:hover {
+  color: #ee3643;
+}
+
+.user-options a:active {
+  opacity: 0.3;
+}
+
+/**********Стилизация каталога**********/
+
+.inner-page main {
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.user-options,
+.breadcrumbs-list,
+.filter ul,
+.catalog-list {
+  list-style: none;
+}
+
+.breadcrumbs-list a {
+  color: #000000;
+}
+
+.catalog-list-name {
+  background-color: #f2f6f8;
+}
+
+.catalog-list-name h2 {
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  color: #32425c;
+}
+
+.filter fieldset {
+  border: 0;
+}
+
+.filter legend {
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+.filter-option label {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.filter-input:disabled + label {
+  opacity: 0.4;
+}
+
+.filter-button,
+.filter-button:hover,
+.filter-button:active {
+  color: #000000;
+  
+  background-color: #ffffff;
+}
+
+.filter-button,
+.catalog-list li {
+  border: 1px solid #e5e5e5;
+}
+
+.filter-button:hover {
+  border: 1px solid #bdc6ca;
+}
+
+.filter-button:active {
+  border: 1px solid #ee3744;
+}
+
+.catalog-list li:hover {
+  box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
+}
+
+.catalog-list a {
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: bold;
+  color: #000000;
+  text-transform: none;
+}
+
+.old-price {
+  font-size: 17px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #999999;
+  text-decoration: line-through;
+}
+
+.catalog-item-price a {
+  color: #ffffff;
+}
+
+.catalog-item-image a:first-child,
+.catalog-item-image a:last-child {
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.catalog-item-image a:first-child {
+  color: #ffffff;
+
+  background-color: #63a63e;
+  box-shadow: 0px -3px 0px 0px rgba(54, 115, 21, 1) inset; 
+}
+
+.catalog-item-image a:first-child:hover {
+  background-color: #5fbb2d;
+}
+
+.catalog-item-image a:first-child:active {
+  background-color: #518534;
+}
+
+.catalog-item-image a:last-child {
+  color: #32425c;
+
+  background-color: #ffffff;
+  border: 3px solid #63a63e;
+}
+
+.catalog-item-image a:last-child:hover {
+  border-color: #32425c;
+}
+
+.catalog-item-image a:last-child:active {
+  opacity: 0.3;
+}

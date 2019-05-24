@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Техномарт</title>
+    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700,700i&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <header class="site-header">
@@ -11,7 +15,14 @@
           <a class="site-logo">
             <img src="img/logo-technomart.svg" width="136.5" height="21.59" alt="Техномарт">
           </a>
-          <a href="#">Поиск</a>
+          <div class="user-searching">
+          <form class="user-search" method="post" action="https://echo.htmlacademy.ru">
+          <label for="search">
+            <!---???-->
+          </label>
+          <input type="text" name="searching" id="search" placeholder="Поиск:">
+          </form>
+          </div>
           <a href="#">Закладки: 0</a>
           <a href="#">Корзина: 0</a>
           <a class="button" href="#">Оформить заказ</a>
@@ -25,8 +36,8 @@
             <span>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</span>
           </p>
           <p class="header-login">
-            <a class="button" href="#">Войти</a>
-            <a class="button" href="#">Регистрация</a>
+            <a class="button login-button" href="#"><span>Войти</span></a>
+            <a class="button login-button" href="#"><span>Регистрация</span></a>
           </p>
           <nav class="main-navigation">
             <ul class="site-navigation">
@@ -52,8 +63,7 @@
             <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и
               строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.</p>
             <p>Мы можем доставить ваш товар в самые отдаленные точки России!
-              Техномарт работает со многими транспортными компаниями:
-            </p>
+              Техномарт работает со многими транспортными компаниями:</p>
             <ul class="our-partners">
               <li>Деловые линии</li>
               <li>Автотрейдинг</li>
@@ -86,6 +96,8 @@
             <li><a href="catalog.html">Каталог</a></li>
             <li><a href="#">Доставка</a></li>
             <li><a href="#">Контакты</a></li>
+          </ul>
+          <ul class="footer-navigation-products">
             <li><a href="#">Материалы</a></li>
             <li><a href="#">Техника</a></li>
             <li><a href="#">Инструмент</a></li>
@@ -101,9 +113,9 @@
           </p>
           <div class="social">
             <ul>
-              <li><a class="social-button" href="#">Вконтакте</a></li>
-              <li><a class="social-button" href="#">Фейсбук</a></li>
-              <li><a class="social-button" href="#">Инстаграм</a></li>
+              <li><a class="social-button social-vk-button" href="#">Вконтакте</a></li>
+              <li><a class="social-button social-fb-button" href="#">Фейсбук</a></li>
+              <li><a class="social-button social-ig-button" href="#">Инстаграм</a></li>
             </ul>
           </div>
           <p class="feedback">
