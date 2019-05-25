@@ -39,6 +39,10 @@ a {
   background-color: #ee3643;
 }
 
+.button-uppercase {
+  text-transform: uppercase;
+}
+
 .site-header {
   background-color: #f4f7f9;
 }
@@ -52,7 +56,7 @@ a {
 .site-logo,
 .footer-logo {
   background-color: #ee3643;
-  box-shadow: 0px -5px 0px 0px rgba(0, 0, 0, 0.24) inset;
+  box-shadow: 0 -5px 0 0 rgba(0, 0, 0, 0.24) inset;
 }
 
 .button:hover,
@@ -68,7 +72,7 @@ a {
 }
 
 /*
-  СТИЛИЗУЕМ ИНПУТ
+  Стилизуем инпут
 */
 
 .user-searching input {
@@ -112,7 +116,7 @@ a {
 }
 
 /*
-  СТИЛИЗАЦИЯ ИНПУТА ЗАКОНЧЕНА
+  Стилизация инпута закончена
 */
 
 .header-top input,
@@ -174,7 +178,7 @@ a {
 
 .main-navigation {
   background-color: #32425c;
-  box-shadow: 0px -5px 0px 0px rgba(41, 52, 73, 1) inset; 
+  box-shadow: 0 -5px 0 0 rgba(41, 52, 73, 1) inset; 
 }
 
 .site-navigation {
@@ -192,10 +196,6 @@ a {
 .site-navigation a:active {
   background-color: #1d2739;
   opacity: 0.5;
-}
-
-main .button {
-  text-transform: uppercase;
 }
 
 .info {
@@ -281,7 +281,9 @@ main .button {
   display: none;
 }
 
-/*****Стилизация шапки каталога*****/
+/*
+  Стилизация шапки каталога
+*/
 
 .inner-page a:nth-of-type(3) {
   background-color: #ee3643;
@@ -316,7 +318,9 @@ main .button {
   opacity: 0.3;
 }
 
-/**********Стилизация каталога**********/
+/*
+  Стилизация каталога
+*/
 
 .inner-page main {
   font-family: "PT Sans", "Arial", sans-serif;
@@ -389,7 +393,7 @@ main .button {
 }
 
 .catalog-list li:hover {
-  box-shadow: 0px 10px 25px 0px rgba(41, 52, 73, 0.5);
+  box-shadow: 0 10px 25px 0 rgba(41, 52, 73, 0.5);
 }
 
 .catalog-list a {
@@ -424,7 +428,7 @@ main .button {
   color: #ffffff;
 
   background-color: #63a63e;
-  box-shadow: 0px -3px 0px 0px rgba(54, 115, 21, 1) inset; 
+  box-shadow: 0 -3px 0 0 rgba(54, 115, 21, 1) inset; 
 }
 
 .catalog-item-image a:first-child:hover {
