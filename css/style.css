@@ -758,6 +758,7 @@ img {
 .inner-page .login-button {
   display: block;
   width: 300px;
+  margin-right: 0;
 }
 
 .user-options {
@@ -778,6 +779,7 @@ img {
 
 .breadcrumbs-list {
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   padding-left: 54px;
