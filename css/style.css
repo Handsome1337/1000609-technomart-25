@@ -1,15 +1,3 @@
-/* Не забыть проверить, всё ли нужное я записал в это правило
-
-.visually-hidden {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-}
-
-*/
-
 *, *::before, *::after {
   box-sizing: inherit;
 }
@@ -55,7 +43,12 @@ img {
 }
 
 .button {
+  display: inline-block;
+  
+  font: inherit;
+  text-align: center;
   color: #ffffff;
+  vertical-align: middle;
 
   background-color: #ee3643;
 }
@@ -74,10 +67,8 @@ img {
   background-color: #293449;
 }
 
-.site-logo,
-.footer-logo {
+.site-logo {
   background-color: #ee3643;
-  box-shadow: 0 -5px 0 0 rgba(0, 0, 0, 0.24) inset;
 }
 
 .button:hover,
@@ -167,6 +158,8 @@ img {
 }
 
 .header-contacts .telephone-number {
+  font-size: 21px;
+  line-height: 21px;
   color: #ee3643;
 
   border: 3px solid #ffffff;
@@ -253,6 +246,11 @@ img {
   font-size: 18px;
 }
 
+.footer-logo {
+  background-color: #ee3643;
+  box-shadow: 0 -5px 0 0 rgba(0, 0, 0, 0.24) inset;
+}
+
 .footer-navigation,
 .footer-navigation-products {
   list-style: none;
@@ -298,7 +296,7 @@ img {
 .social-button:active {
   background-color: #ee3643;
 }
-
+/*
 .modal {
   display: none;
 }
@@ -411,6 +409,8 @@ img {
 
 .filter-button,
 .catalog-list li {
+  text-align: center;
+
   border: 1px solid #e5e5e5;
 }
 
@@ -420,6 +420,11 @@ img {
 
 .filter-button:active {
   border: 1px solid #ee3744;
+}
+
+.catalog-list .button:hover,
+.catalog-list .button:active {
+  background-color: #ee3643;
 }
 
 .catalog-list li:hover {
@@ -452,44 +457,6 @@ img {
   color: #ffffff;
 }
 
-.catalog-item-image a:first-child,
-.catalog-item-image a:last-child {
-  font-family: "Cuprum", "Arial", sans-serif;
-  font-size: 14px;
-  line-height: 18px;
-  text-transform: uppercase;
-}
-
-.catalog-item-image a:first-child {
-  color: #ffffff;
-
-  background-color: #63a63e;
-  box-shadow: 0 -3px 0 0 rgba(54, 115, 21, 1) inset; 
-}
-
-.catalog-item-image a:first-child:hover {
-  background-color: #5fbb2d;
-}
-
-.catalog-item-image a:first-child:active {
-  background-color: #518534;
-}
-
-.catalog-item-image a:last-child {
-  color: #32425c;
-
-  background-color: #ffffff;
-  border: 3px solid #63a63e;
-}
-
-.catalog-item-image a:last-child:hover {
-  border-color: #32425c;
-}
-
-.catalog-item-image a:last-child:active {
-  opacity: 0.3;
-}
-
 /*
   Делаем сетку
 */
@@ -500,7 +467,7 @@ img {
 
 .container {
   display: flex;
-  width: 940px;
+  width: 960px;
   margin: 0 auto;
   padding: 0 10px;
 }
@@ -512,7 +479,7 @@ img {
 
 .site-logo {
   width: 220px;
-  height: 47px;
+  height: 43px;
 }
 
 .user-searching {
@@ -559,9 +526,9 @@ img {
 .header-contacts .telephone-number {
   display: block;
   width: 270px;
-  margin-bottom: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin-bottom: 3px;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
 
 .header-contacts span {
@@ -575,6 +542,8 @@ img {
 }
 
 .login-button {
+  position: relative;
+
   padding-top: 14px;
   padding-bottom: 14px;
 }
@@ -590,6 +559,7 @@ img {
 }
 
 .main-navigation {
+  width: 100%;
   margin-top: 40px;
   margin-bottom: 60px;
 }
@@ -597,7 +567,6 @@ img {
 .site-navigation {
   display: flex;
   justify-content: space-between;
-  width: 940px;
   margin: 0;
   padding: 0;
 }
@@ -652,6 +621,10 @@ img {
 .about-us a {
   display: inline-block;
   width: 220px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  border-radius: 2px;
 }
 
 .contacts p {
@@ -661,7 +634,11 @@ img {
 
 .contacts a:last-of-type {
   display: block;
-  margin-top: 40px;
+  margin-top: 40px;  
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  border-radius: 2px;
 }
 
 .footer-top {
@@ -762,9 +739,25 @@ img {
 }
 
 .user-options {
+  position: relative;
+
   display: flex;
   margin: 0;
   padding: 0;
+}
+
+.user-options::after {
+  content: "";
+
+  position: absolute;
+  top: 10px;
+  left: 106px;
+  
+  width: 4px;
+  height: 5px;
+
+  background-color: #32425c;
+  border-radius: 2px;
 }
 
 .user-options li:first-child {
@@ -780,14 +773,15 @@ img {
 .breadcrumbs-list {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   margin: 0;
   padding: 0;
   padding-left: 54px;
 }
 
 .breadcrumbs-list li:nth-of-type(3) {
-  padding-left: 40px;
-  padding-right: 42px;
+  margin-left: 40px;
+  margin-right: 42px;
 }
 
 .catalog-list-name h2 {
@@ -818,16 +812,696 @@ img {
 
 .cataloig-list-items {
   width: 700px;
+  margin: 20px auto;
 }
 
 .catalog-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin: 0;
   padding: 0;
 }
 
 .catalog-list li {
+  position: relative;
+  display: inline-block;
   width: 220px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.catalog-list li:nth-child(3n) {
+  margin-right: 0;
+}
+
+.flag {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  
+  width: 60px;
+  height: 60px;
+  
+  text-indent: -1000px;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.actions {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: none;
+  width: 218px;
+  height: 88px;
+  padding: 40px 0;
+
+  z-index: 10;
+}
+
+.for-example .actions {
+  display: block;
+}
+
+li:hover .actions {
+  display: block;
+}
+
+li:hover .catalog-item-image {
+  visibility: hidden;
+}
+
+a.buy,
+a.add-bookmark {
+  font-family: "Cuprum", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  display: block;
+  width: 135px;
+  margin: 0 auto;
+  margin-bottom: 8px;
+  padding: 8px 0;
+
+  border-radius: 2px;
+}
+
+.buy {
+  color: #ffffff;
+
+  background-color: #63a63e;
+  box-shadow: 0 -3px 0 0 rgba(54, 115, 21, 1) inset; 
+}
+
+.buy:hover {
+  background-color: #5fbb2d;
+}
+
+.buy:active {
+  background-color: #518534;
+  box-shadow: 0 -3px 0 0 #518534 inset; 
+}
+
+a.add-bookmark {
+  color: #32425c;
+
+  background-color: #ffffff;
+  border: 3px solid #63a63e;
+}
+
+.add-bookmark:hover {
+  border-color: #32425c;
+}
+
+.add-bookmark:active {
+  opacity: 0.3;
+}
+
+.catalog-item-image {
+  order: -1;
+
+  width: 218px;
+  height: 170px;
+}
+
+.catalog-item-price span,
+.catalog-item-price a {
+  display: block;
+}
+
+.old-price {
+  min-height: 20px;  
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.catalog-item-price a {
+  position: relative;
+
+  width: 125px;
+  margin-left: 42px;
+  margin-bottom: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 10px;
+}
+
+.catalog-item-price a::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  right: -42px;
+
+  width: 0;
+  height: 0;
+
+  border: 21px solid transparent;
+  border-left-color: #ee3643;
+}
+
+/*
+  Добавляем декоративные элементы
+*/
+
+.site-logo {
+  position: relative;
+
+  padding-top: 15px;
+  padding-left: 55px;
+}
+
+.site-logo::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+
+  width: 100%;
+  height: 5px;
+
+  background-color: #b52933;
+}
+
+.site-logo:hover::after,
+.site-logo:focus::after {
+  background-color: #9a212a;
+}
+
+.site-logo:active::after {
+background-color: #8e1e26;
+}
+
+.user-searching {
+  position: relative;
+}
+
+.user-searching input {
+  font: inherit;
+
+  padding-top: 9px;
+  padding-left: 49px;
+  padding-bottom: 9px;
+}
+
+.search-input + label {
+  position: absolute;
+  top: 12px;
+  left: 17px;
+
+  width: 17px;
+  height: 17px;
+
+  opacity: 0.3;
+}
+
+.search-input:hover + label,
+.search-input:focus + label,
+.search-input:active + label {
+  opacity: 1;
+} 
+
+/*
+  Комбинатор "+" не добавляет уровней вложенности, поэтому следующее правило подходит под критерий Д7
+*/
+
+.search-input:focus + label path {
+  fill: #ee3643;
+}
+
+.header-top a:nth-of-type(2) {
+  position: relative;
+
+  padding-left: 54px;
+}
+
+
+.header-top a:nth-of-type(2)::before {
+  content: "";
+
+  position: absolute;
+  top: 12px;
+  left: 27px;
+
+  width: 14px;
+  height: 16px;
+
+  background-image: url("../img/icon-bookmark.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  opacity: 0.3;
+}
+
+.header-top a:nth-of-type(2):hover::before,
+.header-top a:nth-of-type(2):focus::before {
+  opacity: 1;
+}
+
+/* почему-то следующее правило применяется к третьей ссылке, а не ко второй */
+
+.header-top a:active::before {
+  opacity: 0.5;
+}
+
+.header-top a:nth-of-type(3) {
+  position: relative;
+
+  padding-left: 60px;
+}
+
+.header-top a:nth-of-type(3)::before {
+  content: "";
+
+  position: absolute;
+  top: 12px;
+  left: 18px;
+
+  width: 15px;
+  height: 15px;
+
+  background-image: url("../img/cart-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  opacity: 0.3;
+}
+
+.header-top a:nth-of-type(3):hover::before,
+.header-top a:nth-of-type(3):focus::before {
+  opacity: 1;
+}
+
+.header-telephone-number {
+  position: relative;
+
+  padding-left: 70px;
+}
+
+.header-telephone-number::before {
+  content: "";
+
+  position: absolute;
+  top: 10px;
+  left: 14px;
+
+  width: 19px;
+  height: 19px;
+
+  background-image: url("../img/icon-phone.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.login-icon {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+}
+
+.login-button:hover polygon,
+.login-button:hover path {
+  fill: #32425c;
+}
+
+.site-navigation a {
+  display: block;
+
+  padding: 20px 30px;
+}
+
+.our-partners li {
+  position: relative;
+}
+
+.our-partners li::before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  width: 25px;
+  height: 2px;
+  
+  background-color: #ee3643;
+}
+
+.our-partners li {
+  margin-bottom: 23px;
+  padding-left: 36px;
+}
+
+.our-partners li:first-child: {
+  padding-left: 52px;
+}
+
+.our-partners li:last-child: {
+  padding-right: 55px;
+}
+
+.about-us a,
+.contacts a:last-of-type {
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  border-radius: 2px;
+}
+
+.footer-logo {
+  padding-top: 21px;
+  padding-left: 41px;
+}
+
+/*
+  Добавляем декоративные элементы: каталог
+*/
+
+.user-icon {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+
+  width: 20px;
+  height: 18px;
+}
+
+.user-profile .login-icon {
+  left: auto;
+  right: 10px;
+}
+
+.breadcrumbs-list li:nth-of-type(n+2) {
+  position: relative;
+}
+
+.breadcrumbs-list li:nth-of-type(n+2)::before {
+  content: "";
+
+  position: absolute;
+  top: 5px;
+  left: -24px;
+
+  width: 8px;
+  height: 12px;
+
+  background-image: url("../img/icon-right-small.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.breadcrumbs-list li:last-of-type::before {
+  top: 2px;
+}
+
+.to-homepage {
+  position: relative;
+}
+
+.to-homepage::before {
+  content: "";
+
+  position: absolute;
+  top: -6px;
+  left: -54px;
+
+  width: 15px;
+  height: 12px;
+
+  background-image: url("../img/icon-home.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.flag-new {
+  background-image: url("../img/new-flag.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.buy {
+  position: relative;
+}
+
+.buy::before {
+  content: "";
+
+  position: absolute;
+  left: 12px;
+
+  width: 15px;
+  height: 15px;
+
+  background-image: url("../img/cart-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+
+  opacity: 0.3;
+}
+
+.buy:hover::before,
+.buy:focus::before,
+.buy:active::before {
+  opacity: 1;
+}
+
+/*
+  Стилизация попапов
+*/
+
+/*
+  position: relative позже изменю
+*/
+
+.modal {
+  position: relative;
+
+  color: #000000;
+}
+
+.modal-map {
+  width: 940px;
+  height: 446px;
+
+  margin: 0 auto;
+
+  background-color: #eeeae3;
+  box-shadow: 0 0 14.72px 1.28px rgba(47, 42, 43, 0.5);
+}
+
+.modal-map p {
+  margin: 0;
+}
+
+.modal-close {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+
+  width: 21px;
+  height: 21px;
+
+  font-size: 0;
+
+  background-color: transparent;
+  border: 0;
+
+  cursor: pointer;
+}
+
+.modal-close::before,
+.modal-close::after {
+  content: "";
+
+  position: absolute;
+  top: 9px;
+  right: -3px;
+
+  width: 27px;
+  height: 3px;
+
+  background-color: #ee3643;
+}
+
+.modal-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-close::after {
+  transform: rotate(-45deg);
+}
+
+.modal-write-us {
+  width: 620px;
+  margin: 0 auto;
+
+  box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.75);
+}
+
+.modal-write-us::before {
+  content: "";
+
+  position: absolute;
+  top: -7px;
+
+  width: 100%;
+  height: 7px;
+  background-color: #ff5357;
+}
+
+.modal-write-us-wrapper {
+  padding-top: 50px;  
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 37px;
+
+  background-color: #ffffff;
+}
+
+.modal-write-us p {
+  margin: 0;
+}
+
+.modal-write-us .user-data {
+  display: flex;
+  margin-bottom: 25px;
+  justify-content: space-between;
+}
+
+.modal-write-us label {
+  font-size: 18px;
+  line-height: 18px;
+
+  width: 220px;
+}
+
+.modal-write-us input[type="text"],
+.modal-write-us textarea {
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: #a9a9a9;
+
+  width: 100%;
+  padding: 10px 14px;
+
+  border: 2px solid #dee3e4;
+  border-radius: 2px;
+}
+
+.modal-write-us input:hover,
+.modal-write-us textarea:hover {
+  border-color: #b5b5b5;
+}
+
+.modal-write-us input:focus,
+.modal-write-us textarea:focus {
+  border-color: #ee3643;
+}
+
+.modal-write-us textarea {
+  width: 100%;
+
+  resize: none;
+}
+
+.button-wrapper {
+  background-color: #f4f4f4;
+  padding: 37px 80px;
+}
+
+.button-wrapper .button {
+  font-size: 14px;
+  line-height: 18px;
+
+  width: 100%;
+  padding: 12px;
+
+  border: 0;
+  border-radius: 5px / 2px;
+}
+
+.modal-basket {
+  width: 620px;
+  margin: 0 auto;
+
+  box-shadow: 0px 20px 40px 0px rgba(41, 52, 73, 0.75);
+}
+
+.modal-basket::before {
+  content: "";
+
+  position: absolute;
+  top: -7px;
+
+  width: 100%;
+  height: 7px;
+  background-color: #ff5357;
+}
+
+.modal-basket-top-wrapper {
+  padding-top: 74px;
+  padding-bottom: 74px;
+}
+
+.modal-basket h2 {
+  position: relative;
+
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 400;
+  text-align: center;
+
+  margin: 0; 
+  padding: 0;
+}
+
+.modal-basket h2::before {
+  content: "";
+
+  position: absolute;
+  left: 60px;
+  top: -18px;
+
+  width: 66px;
+  height: 66px;
+
+  background-color: #63a63e;
+  background-image: url("../img/form-1.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  border-radius: 50%;
+}
+
+.modal-basket-bottom-wrapper {
+  background-color: #f4f4f4;
+  padding: 37px 80px;
+}
+
+.user-choice {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.user-choice .button {
+  font-size: 14px;
+  line-height: 18px;
+
+  width: 100%;
+  margin-right: 20px;
+  padding: 12px;
+
+  border-radius: 2px;
+}
+
+.user-choice .button:last-child {
+  margin-right: 0;
+
+  color: #000000;
+  background-color: #ffffff;
 }
