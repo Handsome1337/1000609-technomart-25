@@ -309,6 +309,10 @@ img {
   background-color: #ee3643;
 }
 
+.user-profile-top {
+  display: flex;
+}
+
 .user-profile .login-button {
   font-size: 21px;
   line-height: 21px;
@@ -321,6 +325,10 @@ img {
 .user-profile .login-button:focus,
 .user-profile .login-button:active {
   background-color: #ffffff
+}
+
+.user-profile .unlogin-button {
+  background-color: #ffffff;
 }
 
 .user-options a {
@@ -358,7 +366,9 @@ img {
   text-transform: uppercase;
 }
 
-.catalog-list-name {
+.catalog-list-name .container {
+  width: 940px;
+
   background-color: #f2f6f8;
 }
 
@@ -544,18 +554,9 @@ img {
 .login-button {
   position: relative;
 
-  padding-top: 14px;
-  padding-bottom: 14px;
-}
-.login-button:first-child {
-  margin-right: 10px;
-  padding-left: 48px;
-  padding-right: 27px;
-}
-
-.login-button:last-child {
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-top: 12px;
+  padding-left: 47px;
+  padding-bottom: 12px;
 }
 
 .main-navigation {
@@ -733,8 +734,16 @@ img {
 */
 
 .inner-page .login-button {
-  display: block;
-  width: 300px;
+  flex-grow: 1;
+  width: 255px;
+  margin-right: 0;
+}
+
+.inner-page .unlogin-button {
+  position: relative;
+
+  width: 45px;
+  min-height: 45px;
   margin-right: 0;
 }
 
@@ -812,7 +821,6 @@ img {
 
 .cataloig-list-items {
   width: 700px;
-  margin: 20px auto;
 }
 
 .catalog-list {
@@ -860,9 +868,13 @@ img {
   z-index: 10;
 }
 
-.for-example .actions {
+/*
+  Эта карточка товара под вопросом
+
+ .for-example .actions {
   display: block;
 }
+*/
 
 li:hover .actions {
   display: block;
@@ -883,39 +895,42 @@ a.add-bookmark {
   width: 135px;
   margin: 0 auto;
   margin-bottom: 8px;
-  padding: 8px 0;
 
   border-radius: 2px;
 }
 
-.buy {
+a.buy {
+  padding: 10px 0;
+
   color: #ffffff;
 
   background-color: #63a63e;
   box-shadow: 0 -3px 0 0 rgba(54, 115, 21, 1) inset; 
 }
 
-.buy:hover {
+a.buy:hover {
   background-color: #5fbb2d;
 }
 
-.buy:active {
+a.buy:active {
   background-color: #518534;
   box-shadow: 0 -3px 0 0 #518534 inset; 
 }
 
 a.add-bookmark {
+  padding: 8px 0;
+
   color: #32425c;
 
   background-color: #ffffff;
   border: 3px solid #63a63e;
 }
 
-.add-bookmark:hover {
+a.add-bookmark:hover {
   border-color: #32425c;
 }
 
-.add-bookmark:active {
+a.add-bookmark:active {
   opacity: 0.3;
 }
 
@@ -1123,7 +1138,9 @@ background-color: #8e1e26;
 }
 
 .login-button:hover polygon,
-.login-button:hover path {
+.login-button:hover path,
+.unlogin-button:hover polygon,
+.unlogin-button:hover path {
   fill: #32425c;
 }
 
@@ -1189,9 +1206,13 @@ background-color: #8e1e26;
   height: 18px;
 }
 
-.user-profile .login-icon {
-  left: auto;
-  right: 10px;
+.unlogin-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin-top: -8.5px;
+  margin-left: -10px;
 }
 
 .breadcrumbs-list li:nth-of-type(n+2) {
