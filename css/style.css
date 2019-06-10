@@ -318,11 +318,6 @@ img {
 }
 
 /*
-.modal {
-  display: none;
-}
-
-/*
   Стилизация шапки каталога
 */
 
@@ -1425,21 +1420,62 @@ background-color: #8e1e26;
   Стилизация попапов
 */
 
-/*
-  position: relative позже изменю
-*/
+@keyframes appearance {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes error {
+  0%,
+  100% {
+    transform: translateX(0);
+    box-shadow: 0 20px 40px 0 rgba(255, 0, 0, 0.75);
+  }
+
+  20%,
+  60% {
+    transform: translateX(-10px);
+  }
+
+  40%,
+  80% {
+    transform: translateX(10px);
+  }
+}
 
 .modal {
   position: absolute;
 
+  display: none;
+
   color: #000000;
+
+  z-index: 30;
+}
+
+.modal-show {
+  display: block;
+
+  animation: appearance 0.7s;
+  animation-timing-function: linear;
+}
+
+.modal-error {
+  animation: error 0.7s;
+  animation-timing-function: linear;
 }
 
 .modal-map {
   left: 50%;
-  bottom: 235px;
+  bottom: 130px;
 
-  display: none;
   width: 940px;
   height: 446px;
 
@@ -1493,9 +1529,8 @@ background-color: #8e1e26;
 
 .modal-write-us {
   left: 50%;
-  bottom: 210px;
+  bottom: 260px;
 
-  display: none;
   width: 620px;
   margin: -310px;
 
@@ -1566,6 +1601,7 @@ background-color: #8e1e26;
 
 .modal-write-us textarea {
   width: 100%;
+  min-height: 114px;
 
   resize: none;
 }
@@ -1590,7 +1626,6 @@ background-color: #8e1e26;
   top: 410px;
   left: 50%;
 
-  display: none;
   width: 620px;
   margin-left: -310px;
 
