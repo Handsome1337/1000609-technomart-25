@@ -222,12 +222,7 @@ if (mapPopup && writeUsPopup) {
   });
 }
 
-
-
-// Если удалить код 1-84 строк и оставить код, начинающийся с 88 строки, то попап в каталоге заработает
-
 var basket = document.querySelectorAll(".buy");
-
 var basketPopup = document.querySelector(".modal-basket");
 
 if (basketPopup) {
