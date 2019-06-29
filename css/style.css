@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -18,7 +20,6 @@ body {
 
 a {
   text-decoration: none;
-  color: #ffffff;
 }
 
 img {
@@ -66,17 +67,16 @@ img {
   padding: 0 10px;
 }
 
-.site-header {
+.site-header,
+.site-header .container {
   background-color: #f4f7f9;
 }
 
-.header-top {
-  margin-bottom: 46px;
-}
-
 .header-top,
+.header-top .container,
 .header-top input,
-.footer-bottom {
+.footer-bottom,
+.footer-bottom .container {
   background-color: #293449;
 }
 
@@ -244,6 +244,7 @@ img {
 .header-top input,
 .header-top a {
   line-height: 18px;
+  color: #ffffff;
 }
 
 .header-top a:nth-of-type(2) {
@@ -272,12 +273,6 @@ img {
 .header-top a:nth-of-type(2):hover::before,
 .header-top a:nth-of-type(2):focus::before {
   opacity: 1;
-}
-
-/* почему-то следующее правило применяется к третьей ссылке, а не ко второй */
-
-.header-top a:active::before {
-  opacity: 0.5;
 }
 
 .header-top a:nth-of-type(3) {
@@ -316,10 +311,15 @@ img {
 }
 
 .header-top a:nth-of-type(2):active,
-.header-top a:nth-of-type(3):active {
-  background-color: #161d29;
+.header-top a:nth-of-type(3):active {  
+  color: rgba(255, 255, 255, 0.6);
 
-  opacity: 0.6;
+  background-color: #161d29;
+}
+
+.header-top a:nth-of-type(2):active::before,
+.header-top a:nth-of-type(3):active::before {
+  opacity: 0.5;
 }
 
 .header-top a:last-of-type {
@@ -332,7 +332,13 @@ img {
 }
 
 .header-top a:last-of-type:active {
-  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.5);
+
+  background-color: #518534;
+}
+
+.header-bottom .container {
+  padding-top: 46px;
 }
 
 .header-bottom h1, 
@@ -372,7 +378,7 @@ img {
   display: block;
   width: 270px;
   margin-bottom: 3px;
-  padding-top: 11px;
+  padding-top: 9px;
   padding-bottom: 9px;
 
   border: 3px solid #ffffff;
@@ -408,6 +414,7 @@ img {
 
 .header-login {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: flex-end;
 }
@@ -469,10 +476,15 @@ img {
   fill: #32425c;
 }
 
-.login-button:active span {
-  color: #000000;
+.login-button:active polygon,
+.login-button:active path,
+.unlogin-button:active polygon,
+.unlogin-button:active path {
+  fill: #c5c5c5;
+}
 
-  opacity: 0.3;
+.login-button:active span {
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .main-navigation {
@@ -496,6 +508,7 @@ img {
 
 .site-navigation a {
   line-height: 17px;
+  color: #ffffff;
 
   display: block;
   padding: 20px 31px;
@@ -508,8 +521,9 @@ img {
 }
 
 .site-navigation a:active {
+  color: rgba(255, 255, 255, 0.5);
+
   background-color: #1d2739;
-  opacity: 0.5;
 }
 
 .advantages {
@@ -554,6 +568,7 @@ img {
   font-size: 14px;
   line-height: 18px;
   text-align: center;
+  color: #ffffff;
 
   display: block;
   width: 135px;
@@ -923,7 +938,8 @@ img {
 }
 
 .manufacturers-list a {
-  display: flex;
+  display: flex;  
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   width: 218px;
@@ -945,14 +961,13 @@ img {
 }
 
 .services {
-  padding-top: 65px;
-  padding-bottom: 5px;
-
   background-color: #f4f7f9;
 }
 
 .services .container {
   flex-direction: column;
+
+  background-color: #f4f7f9;
 }
 
 .services h2 {
@@ -963,6 +978,7 @@ img {
   text-transform: uppercase;
 
   margin: 0;
+  margin-top: 68px;
   margin-bottom: 26px;
   padding: 0;
 }
@@ -982,6 +998,7 @@ img {
 .services-offers {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 5px;
 }
 
 .services-options {
@@ -1066,8 +1083,9 @@ img {
   color: #32425c;
   text-transform: uppercase;
 
-  margin: 0;  
-  margin-bottom: 22px;
+  margin: 0;
+  margin-top: -3px;  
+  margin-bottom: 25px;
   padding: 0;
 }
 
@@ -1079,7 +1097,7 @@ img {
 .delivery-service {
   background-image: url("../img/delivery-icon.png");
   background-repeat: no-repeat;
-  background-position: 151px 22px;
+  background-position: 151px 25px;
 }
 
 .delivery-service p {
@@ -1107,8 +1125,8 @@ img {
 }
 
 .info {
-  padding-top: 77px;
-  padding-bottom: 88px;
+  padding-top: 80px;
+  padding-bottom: 83px;
 
   color: #000000;
 }
@@ -1133,6 +1151,7 @@ img {
 
 .about-us {
   width: 560px;
+  margin-right: auto;
 }
 
 .about-us p:first-of-type {
@@ -1220,8 +1239,12 @@ img {
 
 .footer-top {
   font-size: 18px;
-  
-  margin-bottom: 47px;
+}
+
+.footer-top .container {  
+  background-color: #32425c;
+
+  padding-bottom: 47px;
 }
 
 .footer-top-left {
@@ -1245,8 +1268,13 @@ img {
   margin: 0;
 }
 
+.footer-top-left .footer-telephone-number {
+  color: #ffffff;
+}
+
 .footer-navigation {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   width: 548px;
@@ -1258,8 +1286,13 @@ img {
   list-style: none;
 }
 
+.footer-navigation a {
+  color: #ffffff;
+}
+
 .footer-navigation-products {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 548px;
   margin: 0;
@@ -1290,7 +1323,9 @@ img {
 .footer-bottom {
   font-size: 16px;
   line-height: 18px;
+}
 
+.footer-bottom .container {
   padding-top: 40px;
   padding-bottom: 33px;
 }
@@ -1314,7 +1349,8 @@ img {
 }
 
 .social-button {
-  display: flex;
+  display: flex;  
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   width: 40px;
@@ -1363,7 +1399,8 @@ img {
 }
 
 .user-profile-top {
-  display: flex;
+  display: flex;  
+  flex-wrap: wrap;
   margin-bottom: 6px;
 }
 
@@ -1409,7 +1446,8 @@ img {
 .user-options {
   position: relative;
 
-  display: flex;
+  display: flex;  
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
 }
@@ -1532,9 +1570,8 @@ img {
 }
 
 .catalog-list-name .container {
-  width: 940px;
-
   background-color: #f2f6f8;
+  background-clip: content-box;
 }
 
 .catalog-list-name h2 {
@@ -1546,7 +1583,7 @@ img {
   text-transform: uppercase;
 
   margin: 0;
-  margin-left: 18px;
+  margin-left: 28px;
   margin-top: 26px;
   margin-bottom: 27px;
   padding: 0;
@@ -1579,7 +1616,7 @@ img {
   margin-left: 20px;
   margin-right: 20px;
   padding-top: 12px;
-  padding-bottom: 12px;
+  padding-bottom: 9px;
 }
 
 .filter fieldset {
@@ -1612,6 +1649,7 @@ img {
 
 .filter legend.power {
   padding-top: 19px;
+  padding-bottom: 11px;
 }
 
 .toddler {
@@ -1668,7 +1706,8 @@ img {
   color: #000000;  
   text-transform: uppercase;
 
-  display: flex;
+  display: flex;  
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
   margin-top: -30px;
@@ -1703,7 +1742,7 @@ img {
 }
 
 .filter-option {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .filter-option:last-of-type {
@@ -1866,30 +1905,27 @@ img {
   margin-left: 20px;
   margin-right: 20px;
   padding-top: 12px;
-  padding-bottom: 12px;
+  padding-bottom: 9px;
 }
 
-.sort button {
+.sort a {
+  color: #000000;
   text-transform: uppercase;
 
-  padding: 0;
-
-  background-color: transparent;
-  border: none;
   border-bottom: 1px dotted #ee3643;
 
   opacity: 0.3;
   cursor: pointer;
 }
 
-.sort button:hover,
-.sort button:focus {
+.sort a:hover,
+.sort a:focus {
   border-bottom-style: solid;
 
   opacity: 1;
 }
 
-.sort button.active {
+.sort a.active {
   color: #ee3643;
 
   border: none;
@@ -1897,21 +1933,27 @@ img {
   opacity: 1;
 }
 
-.sort button.active:hover,
-.sort button.active:focus {
+.sort a.active:hover,
+.sort a.active:focus {
   border: none;
 }
 
-.price-sort {
+.sort .price-sort {
   margin-right: 70px;
 }
 
-.type-sort {
+.sort .type-sort {
   margin-right: 65px;
 }
 
-.function-sort {
+.sort .function-sort {
   margin-right: 47px;
+}
+
+.sort a:nth-of-type(3),
+.sort a:nth-of-type(3):hover,
+.sort a:nth-of-type(3):focus {
+  background-color: transparent;
 }
 
 .sort .ascending-sort {
@@ -1964,7 +2006,7 @@ img {
   flex-wrap: wrap;
   margin: 0;
   margin-left: -20px;
-  margin-bottom: 40px;
+  margin-bottom: 42px;
   padding: 0;
 }
 
@@ -2271,6 +2313,10 @@ li:hover .catalog-item-image {
 }
 
 .about-perforators {
+  background-color: #f2f6f8;
+}
+
+.about-perforators .container {
   padding-top: 65px;
   padding-bottom: 67px;
 
@@ -2461,7 +2507,8 @@ li:hover .catalog-item-image {
 }
 
 .modal-write-us .user-data {
-  display: flex;
+  display: flex;  
+  flex-wrap: wrap;
   margin-bottom: 25px;
   justify-content: space-between;
 }
@@ -2582,22 +2629,25 @@ li:hover .catalog-item-image {
 
 .modal-basket-bottom-wrapper {
   padding: 37px 80px;
+  padding-bottom: 17px;
   
   background-color: #f4f4f4;
 }
 
 .user-choice {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   margin: 0;
+  margin-left: -20px;
 }
 
 .user-choice .button {
   font-size: 14px;
   line-height: 18px;
 
-  width: 100%;
-  margin-right: 20px;
+  width: 220px;
+  margin-left: 20px;
+  margin-bottom: 20px;
   padding: 12px;
 
   border-radius: 2px;
